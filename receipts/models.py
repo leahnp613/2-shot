@@ -12,9 +12,8 @@ class ExpenseCategory(models.Model):
         User, on_delete=models.CASCADE, related_name="categories"
     )
 
-
-def __str__(self) -> str:
-    return self.name
+    def __str__(self) -> str:
+        return self.name
 
 
 class Receipt(models.Model):

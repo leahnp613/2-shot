@@ -3,3 +3,6 @@ push_all:
 
 format:
 	black . && djlint . --reformat
+
+venv:
+	source .venv/bin/activate

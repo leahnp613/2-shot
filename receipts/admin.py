@@ -6,7 +6,7 @@ from receipts.models import ExpenseCategory, Receipt, Account
 # Register your models here.
 @admin.register(ExpenseCategory)
 class ExpenseCategoryAdminm(admin.ModelAdmin):
-    list_display = ("name", "owner")
+    list_display = ("name", "owner_id")
 
 
 @admin.register(Receipt)
