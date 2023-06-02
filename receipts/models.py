@@ -11,8 +11,6 @@ class ExpenseCategory(models.Model):
         User,
         on_delete=models.CASCADE,
         related_name="categories",
-        null=True,
-        blank=True,
     )
 
     def __str__(self) -> str:
@@ -25,7 +23,7 @@ class Receipt(models.Model):
     tax = models.DecimalField(max_digits=10, decimal_places=3)
     date = models.DateTimeField(auto_now_add=True)
     purchaser = models.ForeignKey(
-        User, on_delete=models.CASCADE, null=True, blank=True
+        User, on_delete=models.CASCADE
     )
     category = models.ForeignKey(
         "ExpenseCategory", related_name="receipts", on_delete=models.CASCADE
@@ -42,6 +40,4 @@ class Account(models.Model):
         User,
         on_delete=models.CASCADE,
         related_name="accounts",
-        null=True,
-        blank=True,
     )

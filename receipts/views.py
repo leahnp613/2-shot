@@ -19,7 +19,9 @@ def create_receipt(request):
     if request.method == "POST":
         form = ReceiptForm(request.POST)
         if form.is_valid():
-            form.save()
+            receipt = form.save(False)
+            receipt.purchaser = request.user
+            receipt.save()
             return redirect("home")
     else:
         form = ReceiptForm()
@@ -52,7 +54,9 @@ def create_category(request):
     if request.method == "POST":
         form = CategoryForm(request.POST)
         if form.is_valid():
-            form.save()
+            category = form.save(False)
+            category.owner = request.user
+            category.save()
             return redirect("category_list")
     else:
         form = CategoryForm()
@@ -69,7 +73,9 @@ def create_account(request):
     if request.method == "POST":
         form = AccountForm(request.POST)
         if form.is_valid():
-            form.save()
+            account = form.save(False)
+            account.owner = request.user
+            account.save()
             return redirect("account_list")
     else:
         form = AccountForm
