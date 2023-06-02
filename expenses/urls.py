@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import redirect
 
+
 def redirect_to_receipt_list(request):
     return redirect("home")
 
@@ -26,5 +27,6 @@ def redirect_to_receipt_list(request):
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("receipts/", include("receipts.urls")),
-    path("", redirect_to_receipt_list)
+    path("accounts/", include("accounts.urls")),
+    path("", redirect_to_receipt_list),
 ]
