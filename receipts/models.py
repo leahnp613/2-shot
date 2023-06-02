@@ -9,7 +9,11 @@ from django.contrib.auth.models import User
 class ExpenseCategory(models.Model):
     name = models.CharField(max_length=50)
     owner = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="categories"
+        User,
+        on_delete=models.CASCADE,
+        related_name="categories",
+        null=True,
+        blank=True,
     )
 
     def __str__(self) -> str:
@@ -36,5 +40,9 @@ class Account(models.Model):
     name = models.CharField(max_length=100)
     number = models.CharField(max_length=20)
     owner = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="accounts"
+        User,
+        on_delete=models.CASCADE,
+        related_name="accounts",
+        null=True,
+        blank=True,
     )
