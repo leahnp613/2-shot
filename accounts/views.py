@@ -1,3 +1,4 @@
+from multiprocessing.sharedctypes import Value
 from django.shortcuts import render, redirect
 from accounts.forms import LogInForm
 from django.contrib.auth import login, authenticate
@@ -24,3 +25,4 @@ def user_login(request):
         "form": form,
     }
     return render(request, "accounts/login.html",context)
+

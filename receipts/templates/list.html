@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <main>
+{% extends 'accounts/base.html'%}
+{% block content %}
+<main>
             <h1>My Receipts</h1>
-            <table>
+            <table>    
                 <thead>
                     <tr>
                         <th>Vendor</th>
@@ -22,13 +18,12 @@
                                 <td>{{ receipt.vendor }}</td>
                                 <td>{{ receipt.total }}</td>
                                 <td>{{ receipt.tax }}</td>
-                                <td>{{ receipt.date }}</td>
+                                <td>{{ receipt.date|date:'m/d/y' }}</td>
                                 <td>{{ receipt.category }}</td>
                                 <td>{{ receipt.account.name }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
                 </table>
-            </body>
-        </main>
-    </html>
+            </main>
+            {% endblock content %}
