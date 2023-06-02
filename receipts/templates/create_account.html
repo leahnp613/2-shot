@@ -1,0 +1,22 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %}
+    Login!-Expenses
+{% endblock title %}
+{% block content %}
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">Main page</a>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <h1>Create Account</h1>
+            <form method ="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button>Create</button>
+            </form>
+        </div>
+    </main>
+{% endblock content %}
