@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "accounts.apps.AccountsConfig",
     "receipts.apps.ReceiptsConfig",
+    "registration.apps.RegistrationConfig",
 ]
 
 MIDDLEWARE = [
